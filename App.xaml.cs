@@ -1,4 +1,6 @@
-﻿namespace cfloresS3TC
+﻿using cfloresS3TC.Views;
+
+namespace cfloresS3TC
 {
     public partial class App : Application
     {
@@ -9,7 +11,7 @@
 
         protected override Window CreateWindow(IActivationState? activationState)
         {
-            return new Window(new AppShell());
+            return new Window(new vPrincipal());
         }
     }
 }
