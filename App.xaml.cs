@@ -11,7 +11,7 @@ namespace cfloresS3TC
 
         protected override Window CreateWindow(IActivationState? activationState)
         {
-            return new Window(new vPrincipal());
+            return new Window(new NavigationPage(new vPrincipal()));
         }
     }
 }

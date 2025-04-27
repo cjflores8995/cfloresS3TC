@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="cfloresS3TC.Views.vPrincipal"
-             Title="vPrincipal">
+             x:Class="cfloresS3TC.Views.vResultado"
+             Title="vResultado">
     <VerticalStackLayout>
         <ScrollView>
 
             <VerticalStackLayout Padding="20" Spacing="20">
-                <Label Text="DATOS DEL USUARIO" HorizontalTextAlignment="Center" FontSize="Medium" FontAttributes="Bold"></Label>
-                
+                <Label Text="DATOS DEL USUARIO - RESULTADO" HorizontalTextAlignment="Center" FontSize="Medium" FontAttributes="Bold"></Label>
+
                 <Image x:Name="imagenFormulatio1"
-                       HeightRequest="200"
-                        Aspect="AspectFit"
-                        HorizontalOptions="Center"
-                        VerticalOptions="Start"
-                       Source="imagen_perfil.png"></Image>
+                   HeightRequest="200"
+                    Aspect="AspectFit"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Start"
+                   Source="imagen_perfil.png"></Image>
 
                 <Grid ColumnSpacing="10" RowSpacing="10">
                     <Grid.ColumnDefinitions>
@@ -32,39 +32,43 @@
 
                     <!-- fila 1-->
                     <Label Text="Tipo Identificación" Grid.Row="0" Grid.Column="0"></Label>
-                    <Picker x:Name="pickerTipoIdentificacion" Grid.Row="0" Grid.Column="1" SelectedIndexChanged="pickerTipoIdentificacion_SelectedIndexChanged"></Picker>
+                    <Label x:Name="lblTipoIdentificacion" Grid.Row="0" Grid.Column="1" FontAttributes="Bold"></Label>
 
                     <Label Text="Identificación" Grid.Row="0" Grid.Column="2"></Label>
-                    <Entry x:Name="txtIdentificacion" Grid.Row="0" Grid.Column="3"></Entry>
+                    <Label x:Name="lblIdentificacion" Grid.Row="0" Grid.Column="3" FontAttributes="Bold"></Label>
 
                     <!-- fila 2-->
                     <Label Text="Nombres" Grid.Row="1" Grid.Column="0"></Label>
-                    <Entry x:Name="txtNombres" Grid.Row="1" Grid.Column="1"></Entry>
+                    <Label x:Name="lblNombres" Grid.Row="1" Grid.Column="1" FontAttributes="Bold"></Label>
 
                     <Label Text="Apellidos" Grid.Row="1" Grid.Column="2"></Label>
-                    <Entry x:Name="txtApellidos" Grid.Row="1" Grid.Column="3"></Entry>
+                    <Label x:Name="lblApellidos" Grid.Row="1" Grid.Column="3" FontAttributes="Bold"></Label>
 
                     <!-- fila 3-->
 
                     <Label Text="Fech" Grid.Row="2" Grid.Column="0"></Label>
-                    <DatePicker x:Name="datePickerFecha" Grid.Row="2" Grid.Column="1" Format="dd/MM/yyyy" MinimumDate="01/01/2025"></DatePicker>
+                    <Label x:Name="lblFecha" Grid.Row="2" Grid.Column="1" FontAttributes="Bold"></Label>
 
                     <Label Text="Email" Grid.Row="2" Grid.Column="2"></Label>
-                    <Entry x:Name="txtEmail" Grid.Row="2" Grid.Column="3"></Entry>
+                    <Label x:Name="lblEmail" Grid.Row="2" Grid.Column="3" FontAttributes="Bold"></Label>
 
                     <!-- fila 4-->
                     <Label Text="Salario" Grid.Row="3" Grid.Column="0"></Label>
-                    <Entry x:Name="txtSalario" Grid.Row="3" Grid.Column="1"></Entry>
+                    <Label x:Name="lblSalario" Grid.Row="3" Grid.Column="1" FontAttributes="Bold"></Label>
+
+                    <Label Text="Aporte IESS" Grid.Row="3" Grid.Column="2"></Label>
+                    <Label x:Name="lblAporteIess" Grid.Row="3" Grid.Column="3" FontAttributes="Bold"></Label>
 
 
                 </Grid>
 
-                <Button x:Name="btnProcesar"
-                        Text="ENVIAR"
-                        CornerRadius="0"
-                        Margin="0,20,0,0"
-                        FontAttributes="Bold"
-                        Clicked="btnProcesar_Clicked"></Button>
+                <Button x:Name="btnExportar"
+                    Text="EXPORTAR"
+                    BackgroundColor="BlueViolet"
+                    TextColor="White"
+                    CornerRadius="0"
+                    Margin="0,20,0,0"
+                    FontAttributes="Bold" Clicked="btnExportar_Clicked"></Button>
 
 
 

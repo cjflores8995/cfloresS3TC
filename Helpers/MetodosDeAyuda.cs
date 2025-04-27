@@ -56,5 +56,23 @@ namespace cfloresS3TC.Helpers
 
             return camposInvalidos;
         }
+
+        /// <summary>
+        /// Calcular aporte IESS
+        /// </summary>
+        /// <param name="valor"></param>
+        /// <returns></returns>
+        public static double CalcularAporteIsess(string valor)
+        {
+            string separadorDecimal = CultureInfo.CurrentCulture.NumberFormat.CurrencyDecimalSeparator;
+            valor = separadorDecimal == "," ? valor.Replace(".", ",") : valor.Replace(",", ".");
+
+            if (double.TryParse(valor, NumberStyles.AllowDecimalPoint, CultureInfo.CurrentCulture, out double valorNumerico))
+            {
+                return Math.Round(valorNumerico * 9.45 / 100, 2);
+            }
+
+            return 0;
+        }
     }
 }
