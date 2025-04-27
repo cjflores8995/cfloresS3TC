@@ -4,9 +4,73 @@
              x:Class="cfloresS3TC.Views.vPrincipal"
              Title="vPrincipal">
     <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+        <ScrollView>
+
+            <VerticalStackLayout Padding="20" Spacing="20">
+                <Label Text="DATOS DEL USUARIO" HorizontalTextAlignment="Center" FontSize="Medium" FontAttributes="Bold"></Label>
+                
+                <Image x:Name="imagenFormulatio1"
+                       HeightRequest="200"
+                        Aspect="AspectFit"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Start"
+                       Source="imagen_perfil.png"></Image>
+
+                <Grid ColumnSpacing="10" RowSpacing="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <!-- fila 1-->
+                    <Label Text="Tipo Identificación" Grid.Row="0" Grid.Column="0"></Label>
+                    <Picker x:Name="pickerTipoIdentificacion" Grid.Row="0" Grid.Column="1" SelectedIndexChanged="pickerTipoIdentificacion_SelectedIndexChanged"></Picker>
+
+                    <Label Text="Identificación" Grid.Row="0" Grid.Column="2"></Label>
+                    <Entry x:Name="txtIdentificacion" Grid.Row="0" Grid.Column="3"></Entry>
+
+                    <!-- fila 2-->
+                    <Label Text="Nombres" Grid.Row="1" Grid.Column="0"></Label>
+                    <Entry x:Name="txtNombres" Grid.Row="1" Grid.Column="1"></Entry>
+
+                    <Label Text="Apellidos" Grid.Row="1" Grid.Column="2"></Label>
+                    <Entry x:Name="txtApellidos" Grid.Row="1" Grid.Column="3"></Entry>
+
+                    <!-- fila 3-->
+
+                    <Label Text="Fech" Grid.Row="2" Grid.Column="0"></Label>
+                    <DatePicker x:Name="datePickerFecha" Grid.Row="2" Grid.Column="1" Format="dd/MM/yyyy" MinimumDate="01/01/2025"></DatePicker>
+
+                    <Label Text="Email" Grid.Row="2" Grid.Column="2"></Label>
+                    <Entry x:Name="txtEmail" Grid.Row="2" Grid.Column="3"></Entry>
+
+                    <!-- fila 4-->
+                    <Label Text="Salario" Grid.Row="3" Grid.Column="0"></Label>
+                    <Entry x:Name="txtSalario" Grid.Row="3" Grid.Column="1"></Entry>
+
+
+                </Grid>
+
+                <Button x:Name="btoProcesar"
+                        Text="ENVIAR"
+                        BackgroundColor="BlueViolet"
+                        TextColor="White"
+                        CornerRadius="0"
+                        Margin="0,20,0,0"
+                        FontAttributes="Bold"></Button>
+
+
+
+            </VerticalStackLayout>
+
+        </ScrollView>
     </VerticalStackLayout>
 </ContentPage>
